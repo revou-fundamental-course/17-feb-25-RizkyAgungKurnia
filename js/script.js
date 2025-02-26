@@ -1,4 +1,3 @@
-// Slider Functionality
 let index = 0;
 const slides = document.querySelectorAll('.slide');
 
@@ -11,7 +10,6 @@ function showSlide() {
 
 setInterval(showSlide, 3000);
 
-// Smooth Scrolling
 document.querySelectorAll('.nav-links a').forEach(anchor => {
     anchor.addEventListener('click', function(event) {
         event.preventDefault();
@@ -26,7 +24,6 @@ document.querySelectorAll('.nav-links a').forEach(anchor => {
     });
 });
 
-// Form Validation
 const form = document.getElementById('contact-form');
 const errorMessage = document.getElementById('error-message');
 
