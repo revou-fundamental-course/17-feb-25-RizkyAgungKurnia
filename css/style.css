@@ -1,23 +1,24 @@
+/* General Styles */
 html {
     scroll-behavior: smooth;
 }
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
 }
+
 .container {
     width: 80%;
     margin: auto;
     overflow: hidden;
 }
 
+/* Navbar */
 nav {
-    background: linear-gradient(90deg, #333, #555); 
+    background: linear-gradient(90deg, #333, #555);
     padding: 15px 0;
-    border-radius: 0 0 30px 30px;
     position: fixed;
     top: 0;
     width: 100%;
@@ -26,33 +27,31 @@ nav {
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
-
 .logo {
     text-transform: uppercase;
     background: linear-gradient(45deg, #ffcc00, #ff6600);
     background-clip: text;
-    -webkit-background-clip: text; 
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    color: transparent; 
+    color: transparent;
     transition: transform 0.3s ease;
 }
-
 .logo:hover {
     transform: scale(1.1);
 }
-
 
 .nav-links {
     display: flex;
     justify-content: center;
     gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links li {
-    display: inline;
     margin: 0 15px;
 }
-
 
 .nav-links a {
     color: white;
@@ -62,11 +61,6 @@ nav {
     position: relative;
     transition: color 0.3s ease-in-out;
 }
-
-.nav-links a:hover {
-    color: orange;
-}
-
 
 .nav-links a::after {
     content: "";
@@ -84,30 +78,14 @@ nav {
     width: 100%;
 }
 
-
-nav.scrolled {
-    background: rgba(51, 51, 51, 0.9);
-    padding: 10px 0;
-}
-
-
-@media screen and (max-width: 768px) {
-    .nav-links {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .nav-links li {
-        margin: 10px 0;
-    }
-}
-
-
+/* Banner */
 .banner {
     height: 500px;
     position: relative;
     background: #222;
+    margin-top: 70px; /* Adjust for fixed navbar */
 }
+
 .slide-container {
     position: absolute;
     width: 100%;
@@ -115,6 +93,7 @@ nav.scrolled {
     display: flex;
     overflow: hidden;
 }
+
 .slide {
     min-width: 100%;
     transition: 0.5s;
@@ -127,17 +106,19 @@ nav.scrolled {
     background-position: center;
 }
 
-
+/* Services */
 .services {
     padding: 50px 0;
     text-align: center;
     background: white;
 }
+
 .service-items {
     display: flex;
     justify-content: center;
     gap: 20px;
 }
+
 .service-item {
     background: #ddd;
     padding: 20px;
@@ -145,17 +126,19 @@ nav.scrolled {
     width: 30%;
 }
 
-
+/* Contact */
 .contact {
     padding: 50px 0;
     text-align: center;
 }
+
 form {
     display: flex;
     flex-direction: column;
     width: 50%;
     margin: auto;
 }
+
 input, textarea {
     margin: 10px 0;
     padding: 10px;
@@ -163,6 +146,7 @@ input, textarea {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
 button {
     background: #333;
     color: white;
@@ -171,14 +155,45 @@ button {
     cursor: pointer;
 }
 
+/* Responsive Design */
 @media screen and (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .nav-links li {
+        margin: 5px 0;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+    }
+
     .service-items {
         flex-direction: column;
     }
+
     .service-item {
         width: 80%;
     }
+
     form {
         width: 80%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .banner {
+        height: 300px;
+    }
+
+    .slide h2 {
+        font-size: 20px;
+    }
+
+    .slide p {
+        font-size: 14px;
     }
 }
